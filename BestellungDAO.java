@@ -28,7 +28,7 @@ public class BestellungDAO {
                 stmt.setInt(1, bestellung.getKid());
                 stmt.setInt(2, bestellung.getFid());
                 stmt.setString(3, bestellung.getZahlungsart());
-                stmt.setBigDecimal(5, bestellung.getPreis());
+                stmt.setBigDecimal(4, bestellung.getPreis());
 
                 stmt.executeUpdate();
                 System.out.println("Bestellung erfolgreich gespeichert");
