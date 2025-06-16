@@ -123,11 +123,11 @@ public class KundeGUI extends JFrame {
         c.insets = new Insets(5, 10, 0, 30);
         this.add(lbl_email, c);
 
-        txt_plz = new JTextField(15);
+        txt_email = new JTextField(15);
         c.gridx = 1;
         c.gridy = 5;
         c.insets = new Insets(5, 0, 0, 10);
-        this.add(txt_plz, c);
+        this.add(txt_email, c);
 
         MyActionListener mylistener = new MyActionListener();
 
@@ -163,8 +163,6 @@ public class KundeGUI extends JFrame {
         @Override
         public void actionPerformed(ActionEvent e) {
 
-            // if (txt_name.getText() = "" && txt_adresse.getText() = "") {
-
             if (e.getSource() == btn_reset) {
                 txt_name.setText("");
                 txt_adresse.setText("");
@@ -176,27 +174,30 @@ public class KundeGUI extends JFrame {
 
             } else if (e.getSource() == btn_speichern) {
 
+                if (txt_name.getText().isEmpty() || txt_adresse.getText().isEmpty() || txt_ort.getText().isEmpty()
+                        || txt_plz.getText().isEmpty() || txt_email.getText().isEmpty()) {
 
+                    JOptionPane.showMessageDialog(null, "Bitte alles ausfüllen!");
 
-                String name, adresse, ort, plz, email;
+                } else {
 
-                name = txt_name.getText();
-                adresse = txt_adresse.getText();
-                ort = txt_ort.getText();
-                plz = txt_plz.getText();
-                email = txt_email.getText();
+                    String name, adresse, ort, plz, email;
 
-                FigurGUI gui1 = new FigurGUI();
-                dispose();
+                    name = txt_name.getText();
+                    adresse = txt_adresse.getText();
+                    ort = txt_ort.getText();
+                    plz = txt_plz.getText();
+                    email = txt_email.getText();
 
-                JOptionPane.showMessageDialog(null, "test");
+                    Kunde neuerKunde = new Kunde(name, adresse, ort, plz, email);
+                    FigurGUI gui1 = new FigurGUI();
 
-                Kunde neuerKunde = new Kunde(name, adresse, ort, plz, email);
+                    dispose();
+
+                }
 
             }
 
-            // }
         }
     }
-
 }

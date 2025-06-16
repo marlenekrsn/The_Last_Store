@@ -153,6 +153,7 @@ public class FigurGUI extends JFrame {
 
         @Override
         public void actionPerformed(ActionEvent e) {
+
             if (e.getSource() == btn_reset) {
                 cbo_charakter.setSelectedIndex(0); // erste Pizza wird angezeigt
                 cbo_waffe.setSelectedIndex(0); // erste Pizza wird angezeigt
