@@ -104,7 +104,7 @@ public class StartGUI extends JFrame{
             }else if (e.getSource() == btn_anzeigenBestellung) {
                 new BestellungAnzeigenGUI();
             }else if (e.getSource()== btn_loeschenBestellung){
-                //new BestellungLoeschenGUI();
+                new BestellungLoeschenGUI();
             }else if (e.getSource()== btn_beenden){
                 dispose();
             }
